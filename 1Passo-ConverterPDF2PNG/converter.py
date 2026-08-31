@@ -4,16 +4,21 @@ Autor: Alexandre Nassar de Peder
 Criação: 02/10/2025.
 Atualização: 03/06/2026
 
-OBS1: coloque o arquivo PDF na mesma pasta deste script
-OBS2: na linha 16, especifique o nome do arquivo PDF que deseja converter.
-OBS3: depois de executar, tem que excluir as imagens com nome de código estranho da pasta de saída, deixando só os nomes que fazem sentido
-OBS4: exclua as páginas 1 (capa), 19 (proposta de redação) e 32 (rascunho da redação)
+OBS1: procure no site do governo a sua prova, baixe o PDF e coloque na mesma pasta deste script
+
+OBS2: na linha 21, especifique o nome do arquivo PDF que deseja converter.
+
+OBS3: este código vai criar uma pasta de saída chamada "imagens-convertidas" e vai pegar página por página do PDF e salvar como imagens PNG nessa pasta.
+
+OBS4: depois de executar, tem que excluir as imagens com nome de código estranho da pasta de saída, deixando só os nomes que fazem sentido
+
+OBS5: Seu objetivo é deixar apenas as questões. Por isso abra cada uma das imagens, exclua as páginas de capa, proposta de redação e rascunho da redação e qualquer outra página que não tenha questões.
 """
 
 from pdf2image import convert_from_path
 import os
 
-arquivo = "enem2024.pdf"
+arquivo = "NOME-DO-PDF-AQUI.pdf"
 pasta_saida = "imagens-convertidas"
 
 if not os.path.exists(pasta_saida):
